@@ -1,0 +1,6 @@
+BeforeSunrise 0
+BeforeSunset 3
+BeforeMidnight 5
+Casablanca 7
+EdgeOfTomorrow 9
+BeginAgain 10
