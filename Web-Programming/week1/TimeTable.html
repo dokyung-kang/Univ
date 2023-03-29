@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <head>
+        <title>Time Table</title>
+    </head>
+    <style>
+        table, td, th {
+            border: 2px solid;
+        }
+        table {
+            border-collapse: collapse;
+            width: 500px;
+            height: 400px;
+        }
+        tr {
+                height: 40px;
+            }
+        td {
+            font-size: 13px;
+            text-align: center;
+            width: 50px;
+        }
+        th {
+            font-size: 20px;
+            text-align: center;
+            width: 50px;
+        }
+        #rc {
+                background-color: #fee287;
+        }
+        #sc {
+                background-color: #beccff;
+        }
+        #cs {
+                background-color: #cacaca;
+        }
+    </style>
+    <body>
+        <div align="center">
+            <h2>강의 시간표</h2>
+            <table>
+                <tr>
+                    <th>2학년</th>
+                    <th>월</th>
+                    <th>화</th>
+                    <th>수</th>
+                    <th>목</th>
+                    <th>금</th>
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <td></td>
+                    <td rowspan="2" id="rc">자료구조</td>
+                    <td id="rc">네트워크</td>
+                    <td></td>
+                    <td id="rc">네트워크</td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td rowspan="2" id="rc">데이터베이스 개론</td>
+                    <td></td>
+                    <td></td>
+                    <td id="sc">운영체제</td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td></td>
+                    <td id="sc">운영체제</td>
+                    <td></td>
+                    <td rowspan="4">사회봉사</td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td rowspan="2" id="sc">웹프로그래밍</td>
+                    <td id="cs">창의와감성</td>
+                    <td></td>
+                    <td id="cs">창의와감성</td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td></td>
+                    <td></td>
+                    <td  rowspan="2" id="sc">소프트웨어프로그래밍</td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+
+        </div>
+    </body>
+</html>
