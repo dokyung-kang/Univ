@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> hw07 </title>
+    <link type="text/css" rel="stylesheet" href="./cssstyle.css"></link>
+    <style>
+         li {
+            list-style-type: none;
+        }       
+        li a {
+            color: black;
+        }        
+        h1 {
+            margin: 200px 0 50px 0;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-size: 250%;
+        }
+        p {
+            font-size: 23px;
+            line-height: 200%;
+            font-family: 바탕;
+            font-weight: bold;
+            margin: 50px 0;
+        }
+        #head {
+            display: grid;
+        }
+        #top {
+            margin: 10px 0 15px 30px;
+        }        
+        #logo {
+            margin: 25px 30px;
+            text-align: center;
+        }
+        #menu1 {
+            background-color: rgb(198, 218, 218);
+            height: 30px;
+            text-align: center;
+            padding-top: 10px;
+            border: solid 1px #000000;    
+            font-weight: bold;
+        }
+        #menu1 li {
+            display: inline;
+        }
+        .item1 {
+            margin: 0 30px 0 30px;
+        }
+        .item3 {
+            background-color: cornflowerblue;
+            margin: 0 30px 0 30px;
+        }
+        .thumbnail {
+            border-radius: 100%;
+            width: 700px;
+            height: 550px;
+        }
+        div.tip {
+            opacity: 0.2;
+        }
+        div.tip:hover {
+            opacity: 1.0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+    <div id="head">     
+        <div id="top">
+            <a href="./hw07.html">홈</a> |
+            <a href="./login.html">로그인</a> |
+            <a href="./error.html">회원가입</a> | 
+            <a href="./error.html">장바구니</a> <br>
+        </div>                       
+         <div id="logo">
+            <a href="./hw07.html">
+                <img width="400px" height="180px" src="img/cakencake.jpg">
+                </a>
+        </div>         
+    </div>
+    </header>     
+    <nav>
+    <div>
+    <ul id="menu1">
+        <li class="item1"><a href="./shop.html">shop</a></li></a>
+        <li>|</li>
+        <li class="item1"><a href="./clientcenter.html">고객센터</a></li>
+        <li>|</li>
+        <li class="item1"><a href="./notice.html">공지사항</a></li>
+        <li>|</li>
+        <li class="item1"><a href="./company.html">회사소개</a></li>
+    </ul>
+    </div>            
+    </nav>
+    <main>
+         
+        <section id="banner">  
+            <ul>
+                <li><a href="https://www.sc.or.kr/"><img src="./img/save.jpg" alt="세이브더칠드런"></a></li>
+                <li><a href="https://www.goodneighbors.kr/"><img src="./img/goodnei.jpeg" alt="굿네이버스"></a></li>
+                <li><a href="http://saac.kr/"><img src="./img/seoulaban.jpg" alt="서울유기동물입양센터"></a></li>
+                <li><a href="https://www.unicef.or.kr/"><img src="./img/unicef.jpg" alt="유니세프"></a></li>
+                <li><a href="https://www.worldvision.or.kr/index.asp"><img src="./img/world.jpg" alt="월드비전"></a></li>
+            </ul>
+        </section>  
+        <center> 
+            <div id="page">
+                <article id="call">
+                    <ul>
+                        <li><strong>문의 전화</strong></li>
+                        <li><div id="phone">02-xxxx-xxxx</div></li>
+                        <li><div id="phone">010-xxxx-xxxx</div></li>
+                        <li>평일 : 오전 9시 ~ 오후 6시</li>
+                        <li>주말/공휴일 : 오전 10시 ~ 오후 3시</li>
+                    </ul>
+                </article>
+                <article id="money1">
+                    <ul>
+                        <li><strong>후원</strong></li>
+                        <li>세이브더칠드런</li>
+                        <li>굿네이버스</li>
+                        <li>서울유기동물입양센터</li>
+                        <li>유니세프</li>
+                        <li>월드비전</li>
+                    </ul>
+                </article>
+                <article id="money2">
+                    <ul>
+                        <li><strong>지원</strong></li>
+                        <li>LG</li>
+                        <li>kakao</li>
+                        <li>naver</li>
+                    </ul>
+                </article>
+                <article id="place">
+                    <ul>
+                        <li><strong>위치</strong></li>
+                        <li>|본사|</li>
+                        <li>서울특별시 ㅇㅇ구 ㅇㅇ동</li>
+                        <li>|지점|</li>
+                        <li>서울</li>
+                        <li>경기</li>
+                        <li>인천</li>
+
+                    </ul>
+                </article>
+                <article id="soon">
+                    <ul>
+                        <li><strong>coming soon</strong></li>
+                        <li>래인보우 케이크</li>
+                        <li>우유 케이크</li>
+                        <li>모카 케이크</li>
+                        <li>티라미수 케이크</li>
+                    </ul>
+                </article>
+            </div>
+            <p>&nbsp;</p>
+           
+            <article>
+            <h1>cake & cake</h1>
+            <div class="thumbnail" style="background-image: url(img/amondpound.jpeg);">              
+                <img width="450" height="550" src="./img/maincake.jpeg" alt="메인 케이크"><br>    
+            </div>                
+            </article>
+            <article>
+            <div class="tip">
+                <p>" 안녕하세요 <br>
+               환상의 케이크 나라 <br>
+               cake & cake에 <br>
+                오신걸 환영합니다 "
+                </p>                 
+            </div>
+            <div class="tip">
+                <p>" Hello <br>
+                Wellcome to <br>
+                The marvelous land of <br>
+                cake & cake "</p>                  
+            </div>
+                         
+            </article>
+        </center>        
+    </main>
+    <footer>
+        <p></p>
+        <p>&nbsp;</p>
+        <hr>
+        <article id="foot">
+            <ul>
+                <li>개인정보 취급방침 | 이용안내 | 이메일 무단수집 거부</li>
+                <li>전자 민원 접수 | 보험약관 안내 | 금융신고센터</li>
+            </ul>
+            <ul>
+                <li>cake & cake(주)</li>
+                <li>대표이사 강도경</li>
+                <li>주소 서울시 ㅇㅇ구 ㅇㅇ동</li>
+                <li>전화: 02-xxxx-xxxx 010-xxxx-xxxx FAX: xxx-xxx</li>
+                <li id="copy">Copyright by cake company All Rights Reserved.</li>
+            </ul>
+        </article>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <p>[사과 정보]</p>
+        <p id="fruits0"></p>
+        <p>[참외 정보]</p>
+        <p id="fruits1"></p>
+        <p>[굴 정보]</p>
+        <p id="fruits2"></p>
+        <script>
+            var fruits=new Array (
+                ['사과', 21000, 10],
+                ['참외', 18000, 20],
+                ['귤', 15000, 30]
+            );
+            for(var i=0; i<3; i++) {
+                var fname=document.getElementById("fruits"+i);
+                fname.textContent=fruits[i];
+            }
+        </script>
+    </body>
+</html>

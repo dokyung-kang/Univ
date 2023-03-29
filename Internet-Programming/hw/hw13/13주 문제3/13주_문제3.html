@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>13주 문제3</title>
+        <script src="jquery-3.6.0.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("img.a2").hide();
+                $("#tog").click(function() {
+                    $("img.a2").slideToggle("slow");
+                });
+            });
+        </script>
+        <style>
+            .a1 {
+                width: 200px
+            }
+            .a2 {
+                width: 700px
+            }
+        </style>
+    </head>
+    <body>
+        <img class="a1" src="./pic2.PNG" alt="그림"><p/>
+        <button id="tog">큰 이미지 보기/닫기</button><p/>
+        <img class="a2" src="./pic2.PNG" alt="그림">
+    </body>
+</html>

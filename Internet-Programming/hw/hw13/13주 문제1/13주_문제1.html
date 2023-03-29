@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>13주 문제1</title>
+        <script src="jquery-3.6.0.js"></script>
+        <script>
+            var n1=0;
+            $(document).ready(function() {
+                $("div.result1").mousedown(function() {
+                    n1++;
+                    $("p:first", this).text("mouse down");
+                    $("p:last", this).text("총 클릭 횟수 " + n1);
+                });
+            });
+            var n2=0;
+            $(document).ready(function() {
+                $("div.result2").mousedown(function() {
+                    n2++;
+                    $("p:first", this).text("mouse down");
+                    $("p:last", this).text("총 클릭 횟수 " + n2);
+                });
+            });
+            var n3=0;
+            $(document).ready(function() {
+                $("div.result3").mousedown(function() {
+                    n3++;
+                    $("p:first", this).text("mouse down");
+                    $("p:last", this).text("총 클릭 횟수 " + n3);
+                });
+            });
+        </script>
+        <style>
+            div.result1 {
+                background-color: yellow;
+                height: 100px;
+                width: 150px;
+            }
+            div.result2 {
+                background-color: skyblue;
+                height: 100px;
+                width: 150px;
+            }
+            div.result3 {
+                background-color: aqua;
+                height: 100px;
+                width: 150px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="result1">
+            <p>마우스 클릭 횟수</p>
+            <p>0</p>
+        </div>
+        <div class="result2">
+            <p>마우스 클릭 횟수</p>
+            <p>0</p>
+        </div>
+        <div class="result3">
+            <p>마우스 클릭 횟수</p>
+            <p>0</p>
+        </div>
+    </body>
+</html>

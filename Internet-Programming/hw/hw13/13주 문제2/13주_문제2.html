@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>13주 문제2</title>
+        <script src="jquery-3.6.0.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("img.a1").hide();
+                $("button.b1").click(function() {
+                    $("img.a2").hide();
+                    $("img.a3").hide();
+                    $("img.a1").show();
+                });
+            });
+            $(document).ready(function() {
+                $("img.a2").hide();
+                $("button.b2").click(function() {
+                    $("img.a1").hide();
+                    $("img.a3").hide();
+                    $("img.a2").show();
+                });
+            });
+            $(document).ready(function() {
+                $("img.a3").hide();
+                $("button.b3").click(function() {
+                    $("img.a1").hide();
+                    $("img.a2").hide();
+                    $("img.a3").show();
+                });
+            });
+        </script>
+        <style>
+            button {
+                text-align: center;
+                margin: 20px;
+            }
+            img {
+                margin-left: 60px;
+            }
+            img.a1 {
+                margin-top: 10px;
+            }
+            img.a2 {
+                margin-top: 10px;
+            }img.a3 {
+                margin-top: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>당신이 좋아하는 스포츠는?</h1>
+            <button class="b1">프로축구</button>
+            <button class="b2">프로야구</button>
+            <button class="b3">프로농구</button><p/>
+            <img class="a1" src="./soccer.PNG" alt="축구공">
+            <img class="a2" src="./baseball.PNG" alt="야구공">
+            <img class="a3"  src="./basketbal.PNG" alt="농구공">
+        </div>
+    </body>
+</html>

@@ -1,0 +1,99 @@
+#columns {
+    column-count: 1;
+    column-width: 300px;
+    text-align: center;
+}
+#columns figure {
+    display: inline-block;
+    margin-bottom: 35px;
+    border: 1px solid rgba(0,0,0,0.2);  
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);          
+}
+#columns figure figcaption {
+    border: 1px solid rgba(0,0,0,0.2);   
+    padding: 10px;
+    margin: 10px;   
+}
+#banner {
+    text-align: center;
+}
+#banner ul {
+    margin-top: 5px;
+}
+#banner li {
+    display: inline;
+}#banner img {
+    width: 100px;
+    height: 40px;
+    margin: 30px;
+}
+#page {
+width: 5000px;
+margin: 0 auto;
+}
+#call {
+    width: 300px;
+    height: 111px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 70px;
+}
+#money1 {
+    width: 300px;
+    height: 111px;
+    float: left;
+    margin-top: 20px;
+}
+#money2 {
+    width: 300px;
+    height: 111px;
+    float: left;
+    margin-top: 20px;
+}
+#place {
+    width: 300px;
+    height: 111px;
+    float: left;
+    margin-top: 20px; 
+}
+#soon {
+    width: 300px;
+    height: 111px;
+    float: left;
+    margin-top: 20px; 
+}
+#phone {
+    font-size: 30px;
+}
+#sidemap {
+    padding: 20px 0 0 15px;
+    width: 5000px;
+}
+#sidemap div {
+    height: 140px;
+    margin: 0 15px 0 15px;
+    padding: 0 5px 0 10px;
+    float: left;
+    background-color: #fafce7;
+}
+#sidemap h4 {
+    font-size: 15px;
+}
+#sidemap ul {
+    opacity: 0;
+}
+#sidemap ul:hover {
+    opacity: 1.0;
+
+}#sidemap li {
+    font-size: 12px;
+    padding: 5px 0 0 0;
+    color: gray;
+    background-color: rgb(246, 255, 196);    
+}
+#foot {
+    font-size: 12px;
+}
+#copy {
+    color: gray;
+}

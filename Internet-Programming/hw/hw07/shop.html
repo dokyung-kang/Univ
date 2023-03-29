@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<link>
+    <meta charset="UTF-8">
+    <title> hw07 </title>
+    <link type="text/css" rel="stylesheet" href="./cssstyle.css"></link>
+    <style>
+        li {
+            list-style-type: none;
+        }       
+        li a {
+            color: black;
+        }        
+        h1 {
+            margin: 200px 0 50px 0;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-size: 250%;
+        }
+        p1 {
+            font-size: 20px;
+            font-weight: bold;
+            color: red;
+        }
+        p2 {
+            font-size: 15px;
+            color: gray;
+        }
+        #head {
+            display: grid;
+        }
+        #top {
+            margin: 10px 0 15px 30px;
+        }        
+        #logo {
+            margin: 25px 30px;
+            text-align: center;
+        }
+        #menu1 {
+            background-color: rgb(198, 218, 218);
+            height: 30px;
+            text-align: center;
+            padding-top: 10px;
+            border: solid 1px #000000;    
+            font-weight: bold;
+        }
+        #menu1 li {
+            display: inline;
+        }
+        .item1 {
+            margin: 0 30px 0 30px;
+        }
+        #menu2 {
+            background-color: rgb(218, 198, 212);
+            height: 30px;
+            text-align: center;
+            padding-top: 10px;
+            border: solid 1px #ff00ea;
+        }
+        #menu2 li {
+            display: inline;
+        }
+        .item2 {
+            margin: 0 30px 0 30px;
+        }
+        .item3 {
+            background-color: rgb(255, 255, 255);
+            margin: 0 30px 0 30px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+    <div id="head">     
+        <div id="top">
+            <a href="./hw07.html">홈</a> |
+            <a href="./login.html">로그인</a> |
+            <a href="./error.html">회원가입</a> | 
+            <a href="./error.html">장바구니</a> <br>
+        </div>                       
+        <div id="logo">
+            <a href="./hw07.html">
+            <img width="400px" height="180px" src="img/cakencake.jpg">
+            </a>
+        </div>
+    </header>
+    <nav>
+    </div>
+    <div>
+    <ul id="menu1">
+        <li class="item3"><a href="./shop.html">shop</a></li></a>
+        <li>|</li>
+        <li class="item1"><a href="./clientcenter.html">고객센터</a></li>
+        <li>|</li>
+        <li class="item1"><a href="./notice.html">공지사항</a></li>
+        <li>|</li>
+        <li class="item1"><a href="./company.html">회사소개</a></li>
+    </ul>
+    </div>    
+    </nav>
+    <nav>
+    <div>
+        <ul id="menu2">
+            <li class="item2"><a href="./normal.html">일반</a></li></a>
+            <li>|</li>
+            <li class="item2"><a href="./vegan.html">비건</a></li>
+            <li>|</li>
+            <li class="item2"><a href="./celebrity.html">기념일</a></li>
+            <li>|</li>
+            <li class="item2"><a href="./limited.html">한정판</a></li>
+            <li>|</li>
+            <li class="item2"><a href="./etc.html">파티 용품</a></li>
+        </ul>
+        </div>  
+    </nav>
+    <main>
+    <center>
+        <section id="sidemap">
+            <div>
+                <h4>인기 상품</h4>
+                <ul>
+                    <li>초코 케이크</li>
+                    <li>당근 케이크</li>
+                    <li>웨딩케이크</li>
+                </ul>
+            </div>
+            <div>
+                <h4>일반</h4>
+                <ul>
+                    <li>초코</li>
+                    <li>치즈</li>
+                    <li>딸기</li>
+                    <li>마카롱</li>
+                </ul>
+            </div>
+            <div>
+                <h4>비건</h4>
+                <ul>
+                    <li>당근</li>
+                    <li>블루베리</li>
+                    <li>두유</li>
+                </ul>
+            </div>
+            <div>
+                <h4>기념일</h4>
+                <ul>
+                    <li>웨딩케이크1</li>
+                    <li>웨딩케이크2</li>
+                    <li>생일케이크1</li>
+                    <li>생일케이크2</li>
+                    <li>생일케이크3</li>
+                    <li>생일케이크4</li>
+                </ul>
+            </div>
+            <div>
+                <h4>한정판</h4>
+                <ul>
+                    <li>m&m's케이크</li>
+                </ul>
+            </div>
+            <div>
+                <h4>파티 용품</h4>
+                <ul>
+                    <li>일반초</li>
+                    <li>글자초</li>
+                    <li>풍선</li>
+                </ul>
+            </div>
+        </section>
+    </center>
+        <center>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <h1>인기 상품</h1>
+        </center>
+        <div id="columns">
+            <figure>
+                <img width="350px" height="250px" src="./img/chococake.jpeg" alt="초코 케이크">
+                <figcaption>
+                    <h2>초코케이크</h2>
+                    <h3>꾸덕꾸덕 생초코 케이크</h3><br>
+                    <p1>40000원</p1><br>
+                    <p2>배송비 3000원</p2>
+                    <p></p>
+                </figcaption>
+            </figure>                            
+            <figure>
+                <img width="350px" height="250px" src="./img/carrotcake.jpeg" alt="당근 케이크">
+                <figcaption>
+                    <h2>당근 케이크</h2>
+                    <h3>건강한 당근 케이크</h3><br>
+                    <p1>40000원</p1><br>
+                    <p2>배송비 3000원</p2>
+                    <p></p>
+                </figcaption>                
+            </figure> 
+            <figure>
+                <img width="350px" height="400px" src="./img/weddong1jpeg.jpeg" alt="아몬드 파운드 케이크">
+                <figcaption>
+                    <h2>웨딩 케이크1</h2>
+                    <h3>장미 생크림 케이크</h3><br>
+                    <p1>60000원</p1><br>
+                    <p2>배송비 3500원</p2>
+                    <p></p>
+                </figcaption>  
+            </figure>                              
+        </div>        
+    </main>
+    <footer>
+        <p></p>
+        <p>&nbsp;</p>
+        <hr>
+        <article id="foot">
+            <ul>
+                <li>개인정보 취급방침 | 이용안내 | 이메일 무단수집 거부</li>
+                <li>전자 민원 접수 | 보험약관 안내 | 금융신고센터</li>
+            </ul>
+            <ul>
+                <li>cake & cake(주)</li>
+                <li>대표이사 강도경</li>
+                <li>주소 서울시 ㅇㅇ구 ㅇㅇ동</li>
+                <li>전화: 02-xxxx-xxxx 010-xxxx-xxxx FAX: xxx-xxx</li>
+                <li id="copy">Copyright by cake company All Rights Reserved.</li>
+            </ul>
+        </article>
+    </footer>
+</body>
+
+</html>
