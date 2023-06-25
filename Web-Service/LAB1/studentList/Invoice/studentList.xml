@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--컴퓨터학과 20210750 강도경  -->
+<studentList>
+	<!-- 학생 1 -->
+	<student sid="20230001" grade="1">
+		<name>강민지</name>
+		<dept deptName="korean"/> 
+		<phone>
+			<home>02-001-0001</home>
+			<mobile>010-0001-0001</mobile>
+		</phone>
+		<introduce>&#34; 안녕하세요 강민지입니다. &#34;</introduce>
+		<code>
+			<![CDATA[
+				if (95 <= a && a <= 100) return A+;
+			]]>
+		</code>
+	</student>
+	<!-- 학생 2 -->
+	<student sid="20230020" grade="2">
+		<name>현빈</name>
+		<dept deptName="computer"/> 
+		<phone>
+			<home>02-022-0022</home>
+			<mobile>010-0022-0022</mobile>
+		</phone>
+		<introduce>&#34; 개발 잘하고 싶은 사람입니다. &#34;</introduce>
+		<code>
+			<![CDATA[
+				if (90 <= a && a < 95) return A;
+			]]>
+		</code>
+	</student>
+	<!-- 학생 3 -->
+	<student sid="20230300" grade="3">
+		<name>홍길동</name>
+		<dept deptName="economic"/> 
+		<phone>
+			<home>02-333-0333</home>
+			<mobile>010-0333-0333</mobile>
+		</phone>
+		<introduce>&#34; 홍길동입니다. 잘부탁드립니다. &#34;</introduce>
+		<code>
+			<![CDATA[
+				if (a < 20) return F;
+			]]>
+		</code>
+	</student>
+</studentList>

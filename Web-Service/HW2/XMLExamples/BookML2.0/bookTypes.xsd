@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://www.example.org/bookML"
+  xmlns:tns="http://www.example.org/bookML"  
+  elementFormDefault="qualified">
+  
+  <simpleType name="isbnType">  <!-- 도서의 ID -->
+    <restriction base="string">
+      <pattern value="\d{9}-\d" />     
+    </restriction>
+  </simpleType>
+ 
+  <simpleType name="currencyType">	<!-- 통화 -->
+    <restriction base="string">
+      <enumeration value="won" />
+      <enumeration value="dollar" />
+      <enumeration value="yen" />
+    </restriction>
+  </simpleType>
+ 
+  <simpleType name="pagesType">	<!-- 페이지 수 -->
+    <restriction base="integer">
+      <minInclusive value="1" />
+      <maxInclusive value="1000" />
+    </restriction>
+  </simpleType> 
+  
+  <simpleType name="discountType">	<!-- 할인률 -->
+    <restriction base="integer">
+      <minInclusive value="0" />
+      <maxInclusive value="100" />
+    </restriction>
+  </simpleType>
+ 
+   <complexType name="fileFormatType">	<!-- 파일 형식 -->
+	<attribute name="value">
+		<simpleType>
+			<restriction base="string">
+				<enumeration value="EPUB"></enumeration>
+				<enumeration value="PDF"></enumeration>
+				<enumeration value="StreamText"></enumeration>
+				<enumeration value="StreamImage"></enumeration>
+			</restriction>
+		</simpleType>
+	</attribute>
+  </complexType>
+ 
+  <complexType name="fileSizeType">	<!-- 파일 크기 -->
+    <simpleContent>
+      <extension base="decimal">
+        <attribute name="unit">
+        	<simpleType>
+        		<restriction base="string">
+        			<enumeration value="MB"></enumeration>
+        			<enumeration value="GB"></enumeration>
+        			<enumeration value="KB"></enumeration>
+        			<enumeration value="TB"></enumeration>
+        		</restriction>
+        	</simpleType>
+        </attribute>
+      </extension>
+    </simpleContent>
+  </complexType>
+
+  <simpleType name="avgType">	<!-- 평점 -->
+    <restriction base="float">
+      <minInclusive value="0" />
+      <maxInclusive value="10" />
+    </restriction>
+  </simpleType>
+
+  <complexType name="priceType">	<!-- 가격 -->
+  	<sequence>
+  		<element name="listPrice" type="positiveInteger"></element>
+  		<element name="discountPrice" type="positiveInteger"></element>
+  	</sequence>
+  	<attribute name="currency" type="tns:currencyType"></attribute>
+  </complexType>
+
+  <notation name="bmp" public="image/bmp" system="mspaint.exe"/>
+  <notation name="gif" public="image/gif" system="photoshop.exe"/>
+  <notation name="jpeg" public="image/jpeg" system="photoshop.exe"/>
+
+  <simpleType name="coverImageType">	<!-- 표지그림 -->
+    <restriction base="NOTATION">
+      <enumeration value="tns:bmp" />
+      <enumeration value="tns:gif" />
+      <enumeration value="tns:jpeg" />
+    </restriction>
+  </simpleType>
+
+  <complexType name="coverImage">
+  	<attribute name="src" type="anyURI"></attribute>
+  	<attribute name="type" type="tns:coverImageType"></attribute>
+  </complexType>
+
+  <attributeGroup name="dateGroup">		<!-- 날짜 -->
+  	<attribute name="year">
+  		<simpleType>
+  			<restriction base="integer">
+  				<minInclusive value="1900"/>
+  				<maxInclusive value="2023"/>
+  			</restriction>
+  		</simpleType>
+  	</attribute>
+  	<attribute name="month">
+  		<simpleType>
+  			<restriction base="integer">
+  				<minInclusive value="01"/>
+  				<maxInclusive value="12"/>
+  			</restriction>
+  		</simpleType>
+  	</attribute>
+  	<attribute name="day">
+  		<simpleType>
+  			<restriction base="integer">
+  				<minInclusive value="01"/>
+  				<maxInclusive value="31"/>
+  			</restriction>
+  		</simpleType>
+  	</attribute>
+  </attributeGroup>
+</schema>

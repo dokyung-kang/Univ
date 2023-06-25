@@ -1,0 +1,79 @@
+<!-- 내부 parameter entity 사용 -->
+<!ENTITY % dateAttr 'year CDATA #REQUIRED
+					month (01|02|03|04|05|06|07|08|09|10|11|12) "01"
+					day (01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|
+					18|19|20|21|22|23|24|25|26|27|28|29|30|31) "01"'>
+
+<!ENTITY % commonBookInfo "title, originalTitle?, author+, translator?, 
+							publisher, publishDate, revisionDate*, price, 
+							pages, avgScore, coverImage?, description?, review*">
+
+<!-- 내부 일반 parsed entity 사용 (평점 중간값) -->
+<!ENTITY midScore "5.0">
+
+<!-- R1: BookML 문서는 도서들의 목록과 도서 분류 체계로 구성 -->
+<!-- root element 선언 -->
+<!ELEMENT bookCatalog (bookList, bookCategory)>
+<!ELEMENT bookList (book*, ebook*, newEBook)>
+
+<!-- R2: 도서 정보 넣기 -->
+<!ELEMENT book (%commonBookInfo;)>
+<!-- R9: 전자책은 파일형식, 파일크기, 이용기간 정보 추가 -->
+<!ELEMENT ebook (%commonBookInfo;, format, size, period)>
+<!ELEMENT newEBook (%commonBookInfo;, discountRate, format, size, period)>
+ 
+<!-- R3: 도서 식별자는 ISBN형식이고 각자 유일한 값 -->
+<!ATTLIST book id ID #REQUIRED
+				categories IDREFS #REQUIRED>
+<!ATTLIST ebook id ID #REQUIRED
+				categories IDREFS #IMPLIED>
+<!ATTLIST newEBook id ID #REQUIRED
+				categories IDREFS #IMPLIED>
+				
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT originalTitle (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT translator (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT publishDate EMPTY>
+<!ELEMENT revisionDate EMPTY>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT pages (#PCDATA)>
+<!ELEMENT avgScore (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT review (#PCDATA)>
+
+<!-- R4: 도서의 출판일과 개정일 -->
+<!ATTLIST publishDate %dateAttr;>	
+<!ATTLIST revisionDate %dateAttr;>
+
+<!-- R5: 가격은 정가와 할인가로 구분, 가격은 원, 달러, 엔화로 표시 가능 -->
+<!ATTLIST price currency (won|dollor|yen) "won"
+				listPrice CDATA #REQUIRED
+				discountPrice CDATA #REQUIRED>		
+
+<!-- R8: 도서의 표시 지정 -->
+<!NOTATION gif PUBLIC "image/gif" "imageViewer.exe">
+<!NOTATION jpeg PUBLIC "image/jpeg" "imageViewer.exe">
+<!ELEMENT coverImage (#PCDATA)>
+<!ATTLIST coverImage src CDATA #REQUIRED 
+					type NOTATION (gif|jpeg) "gif">
+
+<!-- R11: 신간 전자책 할인율 -->
+<!ELEMENT discountRate (#PCDATA)>
+<!-- R9: 전자책은 파일형식, 파일크기, 이용기간 정보 추가 -->
+<!ELEMENT format EMPTY>
+<!ELEMENT size (#PCDATA)>
+<!ELEMENT period (#PCDATA)>
+
+<!-- R10: 전자책 파일형식과 파일크기 -->
+<!ATTLIST format value (EPUB|PDF|StreamText|StreamImage) "EPUB">
+<!ATTLIST size unit (KB|MB) "KB">
+
+<!ELEMENT bookCategory (category*)>
+<!-- R12: 다시 세부 분야로 나눌 수 있음 -->	
+<!ELEMENT category (category*)>
+
+<!-- R7: 도서와 분야 사이의 참조 관계 정의 -->
+<!ATTLIST category cid ID #REQUIRED
+				name CDATA #REQUIRED>

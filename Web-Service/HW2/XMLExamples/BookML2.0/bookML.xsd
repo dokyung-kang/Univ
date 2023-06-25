@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/bookML"
+	xmlns:tns="http://www.example.org/bookML"
+	elementFormDefault="qualified">
+
+    <include schemaLocation="bookTypes.xsd"></include>
+
+	<element name="bookCatalog">
+		<complexType>
+			<annotation>
+				<documentation>루트 엘리먼트인 bookCatalog</documentation>	  <!-- annotation 사용 -->
+			</annotation>
+			<sequence>
+				<element ref="tns:bookList"></element>
+				<element ref="tns:bookCategory"></element>
+			</sequence>
+		</complexType>
+		<key name="keyIsbn"> 	<!-- 도서 isbn 식별자 key 조건 -->
+			<selector xpath="./tns:bookList/tns:book"></selector>
+			<field xpath="./@isbn"></field>
+		</key>
+		<keyref name="keyrefCategory" refer="tns:keyCategory">	<!-- 도서의 분야에 대한 참조무결성 제약 -->
+			<selector xpath="./tns:bookList/tns:book/tns:category"></selector>
+			<field xpath="."></field>
+		</keyref>
+	</element>
+	
+	<element name="bookCategory">	<!-- 분류체계 전역 엘리먼트 -->
+		<complexType>
+			<sequence>
+				<element name="category" type="tns:categoryType" minOccurs="0" maxOccurs="unbounded"></element>
+			</sequence>
+		</complexType>
+		<key name="keyCategory"> <!-- 도서의 분야에 대한 제약 조건 -->
+			<selector xpath=".//tns:category"></selector>
+			<field xpath="./@cid"></field>
+		</key>
+	</element>
+	
+	<element name="bookList">	<!-- 도서 목록 전역 엘리먼트 -->
+		<complexType>
+			<sequence>
+				<element name="book" type="tns:bookType" minOccurs="0" maxOccurs="unbounded"></element>
+			</sequence>
+		</complexType>
+	</element>
+	
+	<element name="publishDate">	<!-- 출판일 전역 엘리먼트 -->
+		<complexType>
+			<attributeGroup ref="tns:dateGroup"></attributeGroup>
+		</complexType>
+	</element>
+	
+	<element name="revisionDate">	<!-- 개정일 전역 엘리먼트 -->
+		<complexType>
+			<attributeGroup ref="tns:dateGroup"></attributeGroup>
+		</complexType>
+	</element>
+
+	<complexType name="categoryType">	<!-- bookCategory 타입 -->
+		<sequence>
+			<element name="category" type="tns:categoryType" minOccurs="0" maxOccurs="unbounded"></element>
+		</sequence>
+		<attribute name="cid" type="string"></attribute>
+		<attribute name="name" type="string"></attribute>
+	</complexType>
+
+	<complexType name="bookType">	<!-- 일반 도서 타입 -->
+		<sequence>
+			<element name="title" type="string"/>
+			<element name="originalTitle" type="string" minOccurs="0" maxOccurs="1"></element>
+			<element name="author" type="string" minOccurs="1" maxOccurs="unbounded"></element>
+			<element name="translator" type="string" minOccurs="0" maxOccurs="1"></element>
+			<element name="publisher" type="string"></element>
+			<element ref="tns:publishDate" minOccurs="0" maxOccurs="unbounded"></element>
+			<element ref="tns:revisionDate" minOccurs="0" maxOccurs="unbounded"></element>
+			<element name="price" type="tns:priceType"></element>
+			<element name="pages" type="tns:pagesType"></element>
+			<element name="avgScore" type="tns:avgType"></element>
+			<element name="discountRate" type="tns:discountType"  minOccurs="0" maxOccurs="unbounded"></element>
+			<element name="coverImage" type="tns:coverImage" minOccurs="0" maxOccurs="1"></element>
+			<element name="category" type="string" minOccurs="0" maxOccurs="unbounded"></element>
+			<element name="description" type="string" minOccurs="0" maxOccurs="1"></element>
+			<element name="review" type="string" minOccurs="0" maxOccurs="unbounded"></element>
+		</sequence>
+		<attribute name="isbn" type="tns:isbnType"></attribute>
+	</complexType>
+
+	<complexType name="eBookType">	<!-- 전자 도서 타입 -->
+		<complexContent>
+			<extension base="tns:bookType">
+				<sequence>	<!-- 전자 도서 추가 정보 -->
+					<element name="format" type="tns:fileFormatType"></element>
+					<element name="size" type="tns:fileSizeType"></element>
+					<element name="period" type="positiveInteger" minOccurs="0" maxOccurs="1"></element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="newEBookType">	<!-- 신간 전자 도서 타입 -->
+		<complexContent>
+			<restriction base="tns:eBookType">	<!-- 재선언 -->
+				<sequence>
+					<element name="title" type="string"></element>
+					<element name="originalTitle" type="string" minOccurs="0" maxOccurs="1"></element>
+					<element name="author" type="string" minOccurs="1" maxOccurs="unbounded"></element>
+					<element name="translator" type="string" minOccurs="0" maxOccurs="1"></element>
+					<element name="publisher" type="string"></element>
+					<element ref="tns:publishDate" minOccurs="0" maxOccurs="unbounded"></element>
+					<element ref="tns:revisionDate" minOccurs="0" maxOccurs="0"></element>
+					<element name="price" type="tns:priceType"></element>
+					<element name="pages" type="tns:pagesType"></element>
+					<element name="avgScore">	<!-- 평점 제한 -->
+						<simpleType>
+							<restriction base="tns:avgType">
+								<minInclusive value="2"></minInclusive>
+								<maxInclusive value="8"></maxInclusive>
+							</restriction>
+						</simpleType>
+					</element>
+					<element name="discountRate">	<!-- 할인률 제한 -->
+						<simpleType>
+							<restriction base="tns:discountType">
+								<minInclusive value="0"></minInclusive>
+								<maxInclusive value="10"></maxInclusive>
+							</restriction>
+						</simpleType>
+					</element>
+					<element name="coverImage" type="tns:coverImage" minOccurs="0" maxOccurs="1"></element>
+					<element name="category" type="string" minOccurs="0" maxOccurs="unbounded"></element>
+					<element name="description" type="string" minOccurs="0" maxOccurs="1"></element>
+					<element name="review" type="string"  minOccurs="0" maxOccurs="unbounded"></element>
+					<element name="format" type="tns:fileFormatType"></element>
+					<element name="size" type="tns:fileSizeType"></element>
+					<element name="period">	<!-- 기간 제한 -->
+						<simpleType>
+							<restriction base="positiveInteger">
+								<maxInclusive value="14"></maxInclusive>
+							</restriction>
+						</simpleType>
+					</element>
+				</sequence>
+			</restriction>
+		</complexContent>
+	</complexType>
+	
+</schema>
