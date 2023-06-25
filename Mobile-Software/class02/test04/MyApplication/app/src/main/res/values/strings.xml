@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="kgreeting">안녕</string>
+    <string name="egreeting">hi</string>
+</resources>
